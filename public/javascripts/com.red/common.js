@@ -1,12 +1,10 @@
 "use strict";
 
-var com = com || {};
-com.red = com.red || {
-    exports: function (name) {
-        this[name] = {};
-    }
-};
-
+var com = com || function () {
+    var o = Object.create(null);
+    o.red = Object.create(null);
+    return o;
+}();
 /**
  *
  * @param {Array} superClassArray
@@ -14,7 +12,7 @@ com.red = com.red || {
  * @returns {Function}
  * @constructor
  * @example
- * var Baz = Extends([Foo,Bar]);
+ * var Baz = $extends([Foo,Bar]);
  * Baz.prototype.add = {...};
  */
 function $extends(superClassArray, fun) {
@@ -42,7 +40,7 @@ function $extends(superClassArray, fun) {
  * @param {(Object|window)} dest        Optional
  * @constructor
  * @example
- * $defined {CONST_NAME:val};
+ * $defined( {CONST_NAME:val} );
  */
 function $defined(kv, dest) {
     var _window = dest || window;

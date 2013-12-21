@@ -10,90 +10,11 @@
 <p>Welcome to <%= title %></p>
 </body>
 </html>
+<script type="text/javascript" src="/javascripts/com.red/common.js"></script>
 <script>
     "use strict";
 
-
-    /**
-     *
-     * @param {Array} superClassArray
-     * @param {Function} fun
-     * @returns {Function}
-     * @constructor
-     */
-    function Extends(superClassArray, fun) {
-        var subClass = fun || function (pm) {
-            var self = this;
-            var params = pm || {};
-            superClassArray.forEach(function (v, i, o) {
-                v.call(self, params);
-            });
-        };
-        superClassArray.forEach(function (v, i, o) {
-            var names = Object.getOwnPropertyNames(v.prototype);
-            console.log(names);
-            names.forEach(function (name) {
-                var pro = Object.getOwnPropertyDescriptor(v.prototype, name);
-                Object.defineProperty(subClass.prototype, name, pro);
-            });
-        });
-        return subClass;
-    }
-
-
-    function Foo() {
-        var id = 0;
-        var num = "123";
-        Object.defineProperties(this, {
-            numb: {
-                get: function () {
-                    return num;
-                }, set: function (val) {
-                    num = val;
-                }
-            }, id: {
-                get: function () {
-                    return id;
-                }, set: function (val) {
-                    id = val;
-                    alert(id);
-                }
-            }
-        });
-
-    }
-
-    Foo.prototype = new function () {
-        var idx = 0;
-        return {
-            test1: function () {
-                alert("test1");
-            }, get idx() {
-                return idx;
-            }, set idx(val) {
-                idx = val;
-                alert(idx);
-            }
-        };
-    };
-    console.log(Foo.prototype);
-
-    //Foo.prototype = Foo_prototype();
-
-    var NP = Extends([Foo]);
-    var np = new NP();
-
-    np.idx = 555;
-
-    np.id = 2;
-    np.test1();
-
-    var Bar = Extends([Foo]);
-    Bar.prototype.add = function (a, b) {
-        alert(a + b);
-    };
-    var bar = new Bar();
-    alert(bar.id);
+    $defined({"TEST_CONTENT": 123, TEST2_CONTENT: 456});
 
 
 </script>
