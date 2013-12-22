@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a5f688a-38a5-485b-9478-e13c4e26c021" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\dictionaries\sw.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\scopes\scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\workspace.xml" afterPath="" />
     </list>
-    <list id="9db48848-1429-491c-acb6-4bd3a4124ece" name="Failed commit: Default" comment="update" />
     <ignored path="web3d.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="views/test.html" />
@@ -141,25 +142,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/examples/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="17" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="627">
+            <state line="10" column="17" selection-start="162" selection-end="162" vertical-scroll-proportion="-0.0" vertical-offset="190" max-vertical-offset="627">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="common.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/com.red/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="17" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1881">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="6" selection-start="17" selection-end="17" vertical-scroll-proportion="0.030794166" vertical-offset="0" max-vertical-offset="617">
+            <state line="58" column="17" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.25811687" vertical-offset="943" max-vertical-offset="1881">
               <folding />
             </state>
           </provider>
@@ -319,9 +311,9 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="D:/WebstormProjects/Web3D" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="71" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="680" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="662" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="671" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="665" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="71" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="61" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
@@ -470,7 +462,11 @@
       <created>1387713442242</created>
       <updated>1387713442242</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update">
+      <created>1387713480519</created>
+      <updated>1387713480519</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -497,18 +493,18 @@
     <frame x="56" y="-8" width="1872" height="1096" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3163482" sideWeight="0.5013639" order="7" side_tool="true" content_ui="tabs" x="536" y="393" width="911" height="293" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.49918166" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3163482" sideWeight="0.49863613" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30785564" sideWeight="0.49809057" order="9" side_tool="false" content_ui="tabs" x="487" y="675" width="916" height="309" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33510637" sideWeight="0.49972722" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074468" sideWeight="0.50190943" order="6" side_tool="true" content_ui="tabs" x="536" y="393" width="911" height="293" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32908705" sideWeight="0.49918166" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31595746" sideWeight="0.49863613" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074468" sideWeight="0.49809057" order="8" side_tool="false" content_ui="tabs" x="487" y="675" width="916" height="309" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33510637" sideWeight="0.49972722" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24931806" sideWeight="0.6921444" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20076378" sideWeight="0.6836518" order="0" side_tool="false" content_ui="combo" x="808" y="214" width="368" height="652" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20076378" sideWeight="0.6840426" order="0" side_tool="false" content_ui="combo" x="808" y="214" width="368" height="652" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49973643" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13311511" sideWeight="0.17659575" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38747346" sideWeight="0.5008183" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31595746" sideWeight="0.5013639" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3163482" sideWeight="0.5013639" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3074468" sideWeight="0.49972722" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -615,16 +611,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/com.red/common.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="17" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1881">
+        <state line="1" column="6" selection-start="17" selection-end="17" vertical-scroll-proportion="0.030448718" vertical-offset="0" max-vertical-offset="624">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/com.red/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="17" selection-end="17" vertical-scroll-proportion="0.030794166" vertical-offset="0" max-vertical-offset="617">
+        <state line="58" column="17" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.25811687" vertical-offset="943" max-vertical-offset="1881">
           <folding />
         </state>
       </provider>
