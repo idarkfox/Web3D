@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$extends test</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/SyntaxHighlighter.css"></link>
+    <script language="javascript" src="/javascripts/syntaxhighlighter/shCore.js"></script>
+    <script language="javascript" src="/javascripts/syntaxhighlighter/shBrushJScript.js"></script>
+    <script language="javascript" src="/javascripts/syntaxhighlighter/shBrushXml.js"></script>
+</head>
+<body>
+<div><a href="index.html">返回</a></div>
+
+<h1>id :
+    <sapn name="id"></sapn>
+</h1>
+
+<h1>count :
+    <sapn name="count"></sapn>
+</h1>
+
+<h1>title :
+    <sapn name="title"></sapn>
+</h1>
+
+<h1>content :
+    <sapn name="content"></sapn>
+</h1>
+
+<pre name="code" class="js">
+&lt;script type="text/javascript" src="/javascripts/com.red/common.js">&lt;/script>
+&lt;script>
+    "use strict";
+
+    function textContentByName(name,value){
+        var element = document.getElementsByName(name);
+        element.length?element[0].textContent=value:void(0);
+    }
+
+    function Foo(jsonParams){
+        //在内部定义，所以可以接收< jsonParams >
+        Object.defineProperties(this,new function(){
+            var $id = jsonParams.id||0;
+            var $count = jsonParams.count||0;
+            return {
+                id:{
+                    get:function(){
+                        return $id;
+                    }
+                    , set:function(val){
+                        $id = val;
+                        textContentByName("id",$id);
+                    }
+                }
+                , count:{
+                    get:function(){
+                        return $count;
+                    }
+                    , set:function(val){
+                        $count = val;
+
+                    }
+                }
+            };
+        });
+
+        //textContentByName("id",this.id);
+        //textContentByName("count",this.count);
+    }
+
+
+
+    function Bar(jsonParams){
+        //构造时通过 get set 属性访问器中的 set 进行赋值
+        this.title = jsonParams.title||"this a title";
+        this.content = jsonParams.content||"this a content";
+    };
+    Bar.prototype = new function(){
+        //因为是一个单独的作用域，所以无法直接接受 jsonParams 参数，但可以通过 get set 进行访问操作
+        var $title = "";
+        var $content = "";
+        return {
+            nop:function(){}
+            ,get title(){
+                return $title.toString();
+            }
+            ,set title(val){
+                $title = val.toString();
+                textContentByName("title",$title);
+            }
+            , get content(){
+                return $content.toString();
+            }
+            , set content(val){
+                $content = val.toString();
+                textContentByName("content",$content);
+            }
+        }
+    };
+
+    var FooBar = $extends([Foo,Bar],function(ext){
+        return function(jsonParams){
+            ext( jsonParams||{}, this );
+            alert("Constructor init");
+        }
+    });
+
+    var foobar = new FooBar({
+        nop:0
+        ,id:1
+        ,count:1979
+        ,title:"my title"
+        ,content:"my content"
+    });
+    textContentByName("id",foobar.id);
+    textContentByName("count",foobar.count);
+
+&lt;/script>
+</pre>
+
+
+</body>
+</html>
+<script type="text/javascript" src="/javascripts/com.red/common.js"></script>
+<script language="javascript">
+    dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+    dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+<script>
+    "use strict";
+
+    function textContentByName(name, value) {
+        var element = document.getElementsByName(name);
+        element.length ? element[0].textContent = value : void(0);
+    }
+
+    function Foo(jsonParams) {
+        //在内部定义，所以可以接收< jsonParams >
+        Object.defineProperties(this, new function () {
+            var $id = jsonParams.id || 0;
+            var $count = jsonParams.count || 0;
+            return {
+                id: {
+                    get: function () {
+                        return $id;
+                    }, set: function (val) {
+                        $id = val;
+                        textContentByName("id", $id);
+                    }
+                }, count: {
+                    get: function () {
+                        return $count;
+                    }, set: function (val) {
+                        $count = val;
+
+                    }
+                }
+            };
+        });
+
+        //textContentByName("id",this.id);
+        //textContentByName("count",this.count);
+    }
+
+
+    function Bar(jsonParams) {
+        //构造时通过 get set 属性访问器中的 set 进行赋值
+        this.title = jsonParams.title || "this a title";
+        this.content = jsonParams.content || "this a content";
+    }
+    ;
+    Bar.prototype = new function () {
+        //因为是一个单独的作用域，所以无法直接接受 jsonParams 参数，但可以通过 get set 进行访问操作
+        var $title = "";
+        var $content = "";
+        return {
+            nop: function () {
+            }, get title() {
+                return $title.toString();
+            }, set title(val) {
+                $title = val.toString();
+                textContentByName("title", $title);
+            }, get content() {
+                return $content.toString();
+            }, set content(val) {
+                $content = val.toString();
+                textContentByName("content", $content);
+            }
+        }
+    };
+
+    var FooBar = $extends([Foo, Bar], function (ext) {
+        return function (jsonParams) {
+            ext(jsonParams || {}, this);
+            alert("Constructor init");
+        }
+    });
+
+    var foobar = new FooBar({
+        nop: 0, id: 1, count: 1979, title: "my title", content: "my content"
+    });
+    textContentByName("id", foobar.id);
+    textContentByName("count", foobar.count);
+
+</script>
