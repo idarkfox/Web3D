@@ -1,4 +1,0 @@
-export NODE_PATH=/lib/node_modules/
-#node --debug-brk app.js
-#node --debug app.js
-supervisor app.js &
