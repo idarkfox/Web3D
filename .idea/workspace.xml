@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a5f688a-38a5-485b-9478-e13c4e26c021" name="Default" comment="">
+    <list default="true" id="2a5f688a-38a5-485b-9478-e13c4e26c021" name="Default" comment="update">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/sw.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\Web3D.iml" afterPath="" />
-      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\jsLibraryMappings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\GitHub\Web3D\.idea\vcs.xml" afterPath="" />
     </list>
     <ignored path="web3d.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -146,28 +139,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="common.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/com.red/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="28" selection-start="909" selection-end="909" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1862">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/examples/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="17" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="627">
+            <state line="10" column="17" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="627">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="$extends.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/examples/$extends.html">
+      <file leaf-file-name="common.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/com.red/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="582" selection-end="582" vertical-scroll-proportion="0.54931974" vertical-offset="0" max-vertical-offset="3971">
+            <state line="58" column="17" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1881">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="6" selection-start="17" selection-end="17" vertical-scroll-proportion="0.030794166" vertical-offset="0" max-vertical-offset="617">
               <folding />
             </state>
           </provider>
@@ -230,9 +223,9 @@
         <option value="$PROJECT_DIR$/views/examples/index.html" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/examples/index.html" />
-        <option value="$PROJECT_DIR$/public/javascripts/com.red/common.js" />
         <option value="$PROJECT_DIR$/public/examples/$extends.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/public/javascripts/com.red/common.js" />
       </list>
     </option>
   </component>
@@ -280,32 +273,16 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
-      <showMembers />
+      <showMembers ProjectPane="false" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
       <abbreviatePackageNames />
-      <autoscrollToSource />
+      <autoscrollToSource ProjectPane="false" />
       <autoscrollFromSource />
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Default" />
-        <subPane subId="Tests" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Web3D">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,10 +290,6 @@
               <option name="myItemId" value="Web3D" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -325,39 +298,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Web3D" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web3D" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web3D" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Default" />
+        <subPane subId="Tests" />
+        <subPane subId="Project Files" />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="68" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="68" />
     <property name="options.splitter.main.proportions" value="0.23916666" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="settings.github" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
-    <property name="JavaScriptLanguageLevel" value="JS_1_8_5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="69" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="D:/WebstormProjects/Web3D" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="71" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="680" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="662" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="61" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="JavaScriptLanguageLevel" value="JS_1_8_5" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="pi-root" serverId="74c2fbdd-71d3-442d-8f40-bae5389a0e64" createEmptyFolders="true" promptOnLocalOverwrite="false" uploadOnCheckin="74c2fbdd-71d3-442d-8f40-bae5389a0e64" autoUpload="true" uploadOnSaveAll="true">
@@ -383,14 +363,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js Remote Debug.web3d">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -399,6 +371,14 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -483,7 +463,11 @@
       <created>1387630031454</created>
       <updated>1387630031454</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update">
+      <created>1387712688485</created>
+      <updated>1387712688485</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -510,17 +494,17 @@
     <frame x="56" y="-8" width="1872" height="1096" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31740975" sideWeight="0.49863613" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30851063" sideWeight="0.49809057" order="9" side_tool="false" content_ui="tabs" x="487" y="675" width="916" height="309" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3163482" sideWeight="0.49863613" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30785564" sideWeight="0.49809057" order="9" side_tool="false" content_ui="tabs" x="487" y="675" width="916" height="309" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33510637" sideWeight="0.49972722" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24931806" sideWeight="0.6904255" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20076378" sideWeight="0.68259025" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24931806" sideWeight="0.6921444" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20076378" sideWeight="0.6836518" order="0" side_tool="false" content_ui="combo" x="808" y="214" width="368" height="652" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49973643" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13311511" sideWeight="0.17659575" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38747346" sideWeight="0.5008183" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287234" sideWeight="0.49972722" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3180851" sideWeight="0.5008183" order="7" side_tool="true" content_ui="tabs" x="536" y="393" width="911" height="293" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3163482" sideWeight="0.5013639" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31702128" sideWeight="0.5013639" order="7" side_tool="true" content_ui="tabs" x="536" y="393" width="911" height="293" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -554,18 +538,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="43" selection-start="1800" selection-end="1800" vertical-scroll-proportion="0.5374376" vertical-offset="741" max-vertical-offset="2888">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/Scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="171" />
       </provider>
     </entry>
     <entry file="file://E:/大贝的士交接/service/nodeApp/center/processor/accounts.js">
@@ -575,9 +550,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="0" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.6741573" vertical-offset="663" max-vertical-offset="1349">
-          <folding />
-        </state>
+        <state line="57" column="0" selection-start="1415" selection-end="1415" vertical-scroll-proportion="0.6741573" vertical-offset="663" max-vertical-offset="1349" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
@@ -587,79 +560,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="41" selection-start="342" selection-end="342" vertical-scroll-proportion="0.5184591" vertical-offset="0" max-vertical-offset="623">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="17" column="41" selection-start="342" selection-end="342" vertical-scroll-proportion="0.5184591" vertical-offset="0" max-vertical-offset="623" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1512" column="15" selection-start="24153" selection-end="24153" vertical-scroll-proportion="0.0" vertical-offset="28559" max-vertical-offset="72257">
-          <folding />
-        </state>
+        <state line="1512" column="15" selection-start="24153" selection-end="24153" vertical-scroll-proportion="0.0" vertical-offset="28559" max-vertical-offset="72257" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="566" column="8" selection-start="9992" selection-end="10000" vertical-scroll-proportion="0.0" vertical-offset="10281" max-vertical-offset="20064">
-          <folding />
-        </state>
+        <state line="566" column="8" selection-start="9992" selection-end="10000" vertical-scroll-proportion="0.0" vertical-offset="10281" max-vertical-offset="20064" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="21" selection-start="157" selection-end="157" vertical-scroll-proportion="0.031932775" vertical-offset="114" max-vertical-offset="1786">
+        <state line="7" column="21" selection-start="157" selection-end="157" vertical-scroll-proportion="0.031932775" vertical-offset="114" max-vertical-offset="1786" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/syntaxhighlighter/shCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.8688525" vertical-offset="1140" max-vertical-offset="13509" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/syntaxhighlighter/shBrushJScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="623" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/SyntaxHighlighter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="17" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="4275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/examples/$extends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="30" selection-start="582" selection-end="582" vertical-scroll-proportion="0.5410385" vertical-offset="0" max-vertical-offset="3971">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="597" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/examples/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="17" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="456" max-vertical-offset="627">
+        <state line="10" column="17" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="627">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/com.red/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="28" selection-start="909" selection-end="909" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1862">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/syntaxhighlighter/shCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.8688525" vertical-offset="1140" max-vertical-offset="13509">
+        <state line="58" column="17" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0" vertical-offset="943" max-vertical-offset="1881">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="6" selection-start="17" selection-end="17" vertical-scroll-proportion="0.030497592" vertical-offset="0" max-vertical-offset="623">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/syntaxhighlighter/shBrushJScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="623">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/SyntaxHighlighter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="4275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/examples/$extends.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="582" selection-end="582" vertical-scroll-proportion="0.54931974" vertical-offset="0" max-vertical-offset="3971">
+        <state line="1" column="6" selection-start="17" selection-end="17" vertical-scroll-proportion="0.030794166" vertical-offset="0" max-vertical-offset="617">
           <folding />
         </state>
       </provider>
