@@ -1,0 +1,17 @@
+/**
+ * Created by sw on 13-12-22.
+ */
+li {
+    width: 500px;
+    margin: 5px;
+}
+
+li span {
+    width: 100px;
+    color: #00B7FF;
+    position: relative;
+    background-color: #EEEEEE;
+    margin-right: 5px;
+    display: block;
+    float: left;
+}
