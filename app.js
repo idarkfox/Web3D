@@ -48,10 +48,12 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
+app.get('/users', user.list);
+
 app.get('/', routes.index);
 app.get('/edit', routes.edit);
 app.get('/test', routes.test);
-app.get('/users', user.list);
+app.get('/examples', routes.examples);
 
 
 console.log(config);
