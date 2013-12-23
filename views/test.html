@@ -8,71 +8,51 @@
 <h1><%= title %></h1>
 
 <p>Welcome to <%= title %></p>
-</body>
-</html>
-<script type="text/javascript" src="/javascripts/com.red/common.js"></script>
+
+<script language="javascript" src="/javascripts/com.red/common.js"></script>
 <script>
-    "use strict";
 
-    function Foo(jsonParams) {
-        //在内部定义，所以可以接收< jsonParams >
-        Object.defineProperties(this, new function () {
-            var $id = jsonParams.id || 0;
-            var $num = jsonParams.num || 0;
-            return {
-                id: {
-                    get: function () {
-                        return $id;
-                    }, set: function (val) {
-                        $id = val;
-                    }
-                }, num: {
-                    get: function () {
-                        return $num;
-                    }, set: function (val) {
-                        $num = val;
-                    }
-                }
-            };
-        });
+    function Foo() {
+        (1)["<template/fun/html/1>"]["temp"];
+
+
+        ["(10)<template{fun|html|css}10>"];
+
+        (2)["<template{fun|html|css}10>"]["这是一个模板位置"];
+
+        ["<template{fun|css}211tmp1>"]["这是一个模板位置"];
+
+        ["<template{fun|css}>"]["这是一个模板位置"];
+
+        "(2)[<template{fun|html|css}10>]";
+
+        (2)["<template{fun:10:1|html:1:1|css:span:1}>"]["this is a template"];
+        (-2)["<template{fun:10:1|html:1:1|css:span:1}>"]["this is a template"];
+
+
+        0x100["template"];
+        var a = [1, 2, 3, 4, 5];
+
+        alert(1);
+        a["template"];
+        this.num = 1;
     }
+    (2)["<template/fun>"];
+    (3)["<template/fun>"];
+    (1)["<template/fun>"];
+    (1)["<template/fun/css>"];
+    org.red.template.output({
+        nop: 0, src: Foo.toString(), ins: [                                 // NO   Memo        X
+            "{\"缺少对应的模板\"};"             // 0   号模板       default
+            , "alert('test ok number 1 ');"     // 1
+            , "alert('test ok number 2 ');"     // 2
+        ]
+    })
 
-
-    function Bar(jsonParams) {
-        //构造时通过 get set 属性访问器中的 set 进行赋值
-        this.title = jsonParams.title || "this a title";
-        this.content = jsonParams.content || "this a content";
-    }
-    ;
-    Bar.prototype = new function () {
-        //因为是一个单独的作用域，所以无法直接接受 jsonParams 参数，但可以通过 get set 进行访问操作
-        var $title = "";
-        var $content = "";
-        return {
-            nop: function () {
-            }, get title() {
-                return $title.toString();
-            }, set title(val) {
-                $title = val.toString();
-            }, get content() {
-                return $content.toString();
-            }, set content(val) {
-                $content = val.toString();
-            }
-        }
-    };
-
-    var FooBar = $extends([Foo, Bar], function (ext) {
-        return function (jsonParams) {
-            var self = this;
-            ext(jsonParams || {}, self);
-            alert("Constructor init");
-        }
-    });
-
-    var foobar = new FooBar({
-        nop: 0, id: 1, num: 1979, title: "my title", content: "my content"
-    });
+    var obj = {a: 1, b: 2, c: 3};
 
 
 </script>
+</body>
+</html>
+

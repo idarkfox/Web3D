@@ -2,35 +2,52 @@
  * Created by sw on 13-12-22.
  */
 li {
+    list-style-type: decimal;
     width: 500px;
-    margin: 5px;
+    height: 25px;
+    padding: 3px;
+    margin: 3px;
+    vertical-align: middle;
 }
 
 li span {
-    width: 100px;
-    color: #00B7FF;
-    position: relative;
-    background-color: #EEEEEE;
+    width: 200px;
+    color: #006699;
+    height: 21px;
+    background-color: #ECEADB;
     margin-right: 5px;
     display: block;
     float: left;
+    padding: 3px;
+    padding-left: 6px;
+}
+
+a {
+    text-decoration: none;
+    width: 64px;
+    height: 21px;
+    color: #008200;
+    display: block;
+    padding: 3px;
+    float: left;
+    clear: right;
 }
 
 a:link {
-    text-decoration: none;
-    color: blue
-}
 
-a:active {
-    text-decoration: blink
-}
-
-a:hover {
-    text-decoration: underline;
-    color: red
+    color: #333333;
 }
 
 a:visited {
-    text-decoration: none;
-    color: green
+
+}
+
+a:hover {
+    background-color: #006699;
+    color: #FFFFFF;
+}
+
+a:active {
+    background-color: #EEEEEE;
+    color: #5C5C5C;
 }
