@@ -1,112 +1,29 @@
+/**
+ * @author Feng Sheng Wu <idarkfox@qq.com>
+ */
 "use strict";
 
 //----------------------------------------------------------------------------------------------------------------------
-
+/** @typedef {Object} JsonObject */
 //----------------------------------------------------------------------------------------------------------------------
 var org = org || function () {
     var o = Object.create(null);
     o.red = Object.create(null);
     return o;
 }();
+/**
+ * @name use
+ * @param {Function} _module
+ * @param {JsonObject} params         json object
+ */
+org.red.use = function (_module, params) {
 
-org.red.template = Object.create(null);
-
-//(2)["<template{fun|html|css}10>"]["this is a template"];
-//org.red.template.rex = /(\((\d*)\))?\[\"<template(\{(.*)\}){1}(\d+(?=\>)|(\w+))*>\"\]\[\".*\"\];/gim;
-
-//(2)["<template{fun:10|html:1|css}>"]["this is a template"];
-org.red.template.rex = /(\((\d*)\))?\[\"<template(\{(.*)\}){1}(\d+(?=\>)|(\w+))*>\"\]\[\".*\"\];/gim;
-
-//function rule(str){
-//    if (!str.length)
-//        return false;
-//
-//    var rex_rule = /(?=fun|html|css)/i;
-//
-//    if( rex_rule.test(str)  ){
-//        console.log();
-//        return true;
-//    } else {
-//        return false;
-//    }
-//}
-
-org.red.template.output = function (jsonParams) {
-    var jp = jsonParams;
-    var source = jp.src;
-    var inject = jp.ins;
-    //var out    = source.replace( /(\((\d*)\))?\[\"<template((\/(fun|html|css))+(\/\d)?)+>\"\];/gim ,function($0,$1,$2,$3,$4,$5,$6){
-    var out = source.replace(org.red.template.rex, function ($0, $1, $2, $3, $4, $5, $6, $7, $8) {
-
-        // $0 $2 $4 $5 $6
-
-        var loopCount = parseInt($2 || 1);
-        var aRules = $4.split("|");
-
-//        var templateName = 0;
-//        var isObject = false;
-//        var isTemplateName = false;
-
-        var stat = Object.create(null);
-        stat.s = 1;
-        stat.tplGroup = inject;
-        stat.tpl = null;
-        stat.rules = aRules;
-        stat.rule = null;
-
-        // state machine
-        var pssor = [function (r) {
-            r.s = 0;
-        }]; //processor
-        (1);
-        pssor.push(function (r) {
-            r.s = $5 == $6 ? 2 : 20;
-        });       //is template name?
-        (2);
-        pssor.push(function (r) {
-            r.s = r.rules.length ? 3 : 19
-        });  //use template name.
-        (3);
-        pssor.push(function (r) {
-            r.rules = r.rules.reverse();
-            r.rule = null;
-            for (var i = r.rules.length - 1; i >= 0; i--) {
-                if (r.rules[i] && r.rules[i].length) {
-                    r.rule = r.rules.pop();
-                    break;
-                } else {
-                    r.rules.pop();
-                }
-            }
-            r.s = r.rule ? 4 : 18;
-        });                             //get template group name.
-        (4);
-        pssor.push(function (r) {
-            r.s = ( "undefined" != typeof r.tplGroup[r.rule] ) ? 5 : 17
-        });                             //inject data is template group?
-        (5);
-        pssor.push(function (r) {
-            r.s = aRule.length ? 6 : 16
-        });
-
-        //20
-        pssor.push(function (r) {
-            r.s = aRule.length ? 3 : 19
-        });
-
-
-        while (stat.s) {
-            pssor[stat.s](stat);
-        }
-
-
-        //console.log(" parame length:"+ $4.split("|").length + "\n 1:["+ $1 + "]\n 2:[" + $2 + "]\n 3:[" + $3 + "]\n 4:[" + $4 + "]\n 5:["+ $5+"]\n 6:["+ $6+"]\n 7:["+ $7+"]\n 8:["+ $8+"]\n 0:" + $0 );
-
-        var idx = parseInt($2);
-        return idx < inject.length ? inject[idx] : inject[parseInt(0)];
-    });
-    console.log(out);
-}
+    var jsonParams = params || {};
+    if (_module.prototype.name) {
+        org.red[_module.prototype.name.toLowerCase()] = new _module();
+    }
+};
+//----------------------------------------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------------------------------------
 /**
@@ -192,3 +109,14 @@ window.requestAnimFrame = (function () {
         };
 })();
 //----------------------------------------------------------------------------------------------------------------------
+(function () {
+    var oldLoad = window.onload;
+    onload = function () {
+        if (oldLoad)
+            oldLoad(arguments);
+        if ("undefined" != typeof TTemplate) {
+            /** @typedef {TTemplate} org.red.ttemplate */
+            org.red.use(TTemplate);
+        }
+    };
+})();
