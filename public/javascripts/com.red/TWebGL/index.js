@@ -36,21 +36,14 @@
  * @const
  * @typedef {string} WEBGL_COLORS_COLUMN_COUNT */
 
+$defined({WEBGL_CONTEXT: "experimental-webgl"   });
+$defined({WEBGL_FRAGMENT_SHADER: 'x-shader/x-fragment'  });
+$defined({WEBGL_VERTEX_SHADER: 'x-shader/x-vertex'    });
 
-
-
-
-
-
-$def({WEBGL_CONTEXT: "experimental-webgl"   });
-$def({WEBGL_FRAGMENT_SHADER: 'x-shader/x-fragment'  });
-$def({WEBGL_VERTEX_SHADER: 'x-shader/x-vertex'    });
-
-$def({WEBGL_TRIANGLE_ROW_COUNT: 3                      });
-$def({WEBGL_TRIANGLE_COLUMN_COUNT: 3                      });
-$def({WEBGL_COLORS_ROW_COUNT: 3                      });
-$def({WEBGL_COLORS_COLUMN_COUNT: 4                      });
-
+$defined({WEBGL_TRIANGLE_ROW_COUNT: 3                      });
+$defined({WEBGL_TRIANGLE_COLUMN_COUNT: 3                      });
+$defined({WEBGL_COLORS_ROW_COUNT: 3                      });
+$defined({WEBGL_COLORS_COLUMN_COUNT: 4                      });
 
 //----------------------------------------------------------------------------------------------------------------------
 /**
@@ -421,12 +414,12 @@ TBuffer.prototype = {
  * @constructor
  * @extends TBuffer
  */
-function IBO() {
-    TBuffer.apply(this);
+
+var IBO = $extends([TBuffer], function () {
+    ext(jsonParams || {}, this);
     /** @override
      * @param {Array} indices */
     this.setBuffer = function (indices) {
-
 
         this.checkTWebGL();
         var gl = this.TWebGL.gl;
@@ -436,7 +429,8 @@ function IBO() {
         //********************
         this.putBuffer(buffer);
     }
-}
+});
+
 //----------------------------------------------------------------------------------------------------------------------
 /**
  * @name VBO

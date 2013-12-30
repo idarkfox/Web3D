@@ -71,6 +71,12 @@ function $extends_ext(superClassArray, constr) {
     return subClass;
 }
 //----------------------------------------------------------------------------------------------------------------------
+/**
+ *
+ * @param superClassArray
+ * @param constr
+ * @returns {Function}
+ */
 function $extends(superClassArray, constr) {
     return $extends_ext(superClassArray, new Function("ext", "return " + constr.toString()));
 }
