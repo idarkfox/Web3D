@@ -70,7 +70,10 @@ function $extends_ext(superClassArray, constr) {
 
     return subClass;
 }
-
+//----------------------------------------------------------------------------------------------------------------------
+function $extends(superClassArray, constr) {
+    return $extends_ext(superClassArray, new Function("ext", "return " + constr.toString()));
+}
 
 //----------------------------------------------------------------------------------------------------------------------
 /**
@@ -109,14 +112,6 @@ window.requestAnimFrame = (function () {
         };
 })();
 //----------------------------------------------------------------------------------------------------------------------
-(function () {
-    var oldLoad = window.onload;
-    onload = function () {
-        if (oldLoad)
-            oldLoad(arguments);
-        if ("undefined" != typeof TTemplate) {
-            /** @typedef {TTemplate} org.red.ttemplate */
-            org.red.use(TTemplate);
-        }
-    };
-})();
+
+
+

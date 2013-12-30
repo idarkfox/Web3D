@@ -4,212 +4,189 @@
  */
 "use strict";
 
-//if undefined
+/**
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Excuse me that my English isn't very good.
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * [(n)&lt;t{a:x:y},{b},{c...}r>&lt;s>][remark]
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *  &lt;n>
+ *  Loop count, loop executes n times
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *  &lt;t>
+ *  Template, template for use in a processor
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *  &lt;r>
+ *  default number for "y"
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *  &lt;{a:x:y},{b},{c}...>
+ *  Items: a|b|c Is a data packet for replacement
+ *      example:    {html},{css},{function}
+ *
+ *  Items can be a character string or a numeric value of type NUMBER.
+ *      example:    {0},{1:1},{2:10:5}
+ *
+ *  Item: a:x:y
+ *  x: name/number
+ *  y: total number for print
+ *
+ *  Focus: It can be Lambda expression
+ *
+ *  Lambda expression:
+ *  If use Lambda then lexical analysis ignores "x" and "y"
+ *  Form: =>expr;
+ *  expr: JavaScript expression.
+ *  example:
+ *        1.    {=>context.packet[name][n]}
+ *        2.    {=>Math.pow(2,n)}
+ *        3.    {=>context.packet[name](n)}
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ *  &lt;s>
+ *  Strategy: number value. bit [00000111].
+ *
+ *  bit             description
+ *  ---------------------------------------------------------------
+ *  0.Replace       Default : true
+ *                      Level : Top
+ *                      If false: no replacement occurs
+ *
+ *  1.Sign          Default : true
+ *                      Level:low
+ *                      If n =  2 => start -> abc -> abc -> end (is serial)
+ *                      If n = -2 => start -> aa -> bb -> cc -> end
+ *                      If false => n = |n|
+ *
+ *  2.Debug         Default : true
+ *                      report error text
+ *
+ *  3.Others        Unused
+ *
+ **/
+
+/* if undefined */
 if ("undefined" == typeof TTemplate) {
     /* defined*/
     var TTemplate = new Function();
     TTemplate.prototype.name = "TTemplate";
-
-
-    //按序执行（n）次      模板分组 : 模板号/名 : 一次注入量
-    //insert count (n)   {group:sn/name:count|...}
-    ["(1)<template{fun:10:1|html:1:2|css:span:1}>"]["this is a template"];
-    /* (1) result:
-     *  group SN / Name
-     *  <fun  NO     10      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *
-     * defalut: (1)
-     * ["<template{fun:10:1|html:1:2|css:span:1}>"]["this is a template"];
-     * Consistent results
-     * */
-
-    ["(2)<template{fun:10:1|html:1:2|css:span:1}>"]["this is a template"];
-    /* (2) result:
-     *  <fun  NO     10      template >             /loop count => 1
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <fun  NO     10      template >             /loop count => 2
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     * */
-
-
-    ["(-2)<template{fun:10:1|html:1:2|css:span:1}>"]["this is a template"];
-    /* (-2) result:
-     *  <fun  NO     10      template >             /loop count = ( |-2| x (fun:1) ) => 2
-     *  <fun  NO     10      template >
-     *  <html NO      1      template >             /loop count = ( |-2| x (html:2) ) => 4
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     * */
-
-
-    //(n){group:sn/name:count|...}c partial-count
-    // "{::count}" Ignore it, and replace Using partial-count
-    //(n):overall-count
-    ["(1)<template{fun:10|html:1|css:span}2>"]["this is a template"];
-    /* (1) result:
-     *  group SN / Name
-     *  <fun  NO     10      template >
-     *  <fun  NO     10      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     * */
-
-    ["(2)<template{fun:10|html:1|css:span}2>"]["this is a template"];
-    /* (2) result:
-     *  group SN / Name
-     *  <fun  NO     10      template >             /loop count = 1 and  fun:2
-     *  <fun  NO     10      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     *  <fun  NO     10      template >             /loop count = 2 and  fun:2
-     *  <fun  NO     10      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     * */
-
-    ["(-2)<template{fun:10|html:1|css:span}2>"]["this is a template"];
-    /* (-2) result:
-     *  group SN / Name
-     *  <fun  NO     10      template >             /loop count = ( |-2| x (fun:2) ) => 4
-     *  <fun  NO     10      template >
-     *  <fun  NO     10      template >
-     *  <fun  NO     10      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     * */
-
-    ["(3)<template{fun:10|html:1|css:span}>"]["this is a template"];
-    /* (3) result:
-     *  group SN / Name                     fun:1,html:1,css:1
-     *  <fun  NO     10      template >             /loop count = 1
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <fun  NO     10      template >             /loop count = 2
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <fun  NO     10      template >             /loop count = 3
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     * */
-
-    ["(-3)<template{fun:10|html:1|css:span}>"]["this is a template"];
-    /* (-3) result:
-     *  group SN / Name                     fun:1,html:1,css:1
-     *  <fun  NO     10      template >             /loop count = ( |-3| x (fun:1) ) => 3
-     *  <fun  NO     10      template >             /loop count = 2
-     *  <fun  NO     10      template >             /loop count = 3
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <html NO      1      template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     *  <css  Name   span    template >
-     * */
-
-    ["(-2)<template{fun:10:1|html:1:2|css:span:1}2><10110110>"]["this is a template"];
-
-
-    //TTemplate.prototype.rex = /\[\"(\((\-?\d*)\))?<template(\{(.*)\}){1}(\d+)*>\"\](\[\".*\"\])*;/gim;
-
     TTemplate.prototype.rex = /\[[\x09\x20]*\"(\((\-?\d*)\))?[\x09\x20]*<[\x09\x20]*template[\x09\x20]*(\{(.*)\}){1}[\x09\x20]*(\d+)*[\x09\x20]*>[\x09\x20]*(<[\x09\x20]*([0-9a-fA-F]{1,4})*[\x09\x20]*>)?[\x09\x20]*\"[\x09\x20]*\](\[[\x09\x20]*\"(.*)\"[\x09\x20]*\])?;/gim;
 
+    TTemplate.prototype.createCmd = function (table) {
 
-    TTemplate.prototype.output = function (jsonParams) {
-        var jp = jsonParams;
-        var source = jp.src;
-        var inject = jp.ins;
-        var out = source.replace(this.rex, function ($0, $1, $2, $3, $4, $5, $6, $7, $8, $9) {
+        for (var i = 0; i < table.cmd_array.length; i++) {
+            if (table.cmd_array[i]) {
+                if (table.cmd_array[i].search(/=>/) >= 0) {           //Lambda expression
+                    var lambda = table.cmd_array[i].split(/=>/);
+                    if (lambda.length > 1) {
+                        var obj = {};
+                        obj.lambda = new Function("context", "return " + lambda[1]);
+                        obj.count = table.print_count;
+                        table.cmd.push(obj);
+                    }
+                } else {                                        //template
+                    var tpl = table.cmd_array[i].split(/:/);
+                    if (tpl[0]) {
 
-            // $0 $2 $4 $5 $7 /$9
+                        var obj = {};
+                        obj.group = tpl[0];
+                        obj.posi = parseInt(tpl[1]) || 0;
+                        obj.posi = isNaN(obj.posi) ? 0 : obj.posi;
+                        obj.content = "";
+                        var grp = table.packet[obj.group];
+                        if (typeof obj.posi == "number") {
+                            var zj = 0;
+                            for (var z in grp) {
+                                if (zj == obj.posi) {
+                                    obj.content = grp[z];
+                                    break;
+                                }
+                                zj++;
+                            }
+                        } else {
+                            obj.content = grp[ obj.posi ];
+                        }
+                        if (obj.content) {
+                            obj.content = obj.content.toString();
+                        }
+                        if (table.strategy & 4 && 0 == obj.content.length) {
+                            obj.content = "{ " + obj.group + ":" + obj.posi + ": Can not find the template. }";
+                        }
 
-            var loopCount = parseInt($2 || 1);
-            var aRules = $4.split("|");
-
-            var stat = Object.create(null);
-            stat.s = 1;
-            stat.tplGroup = inject;
-            stat.tpl = null;
-            stat.rules = aRules;
-            stat.rule = null;
-
-            // state machine
-            var pssor = [function (r) {
-                r.s = 0;
-            }];
-
-            //processor
-            (1);
-            pssor.push(function (r) {
-                r.s = $5 == $6 ? 2 : 20;
-            });       //is template name?
-            (2);
-            pssor.push(function (r) {
-                r.s = r.rules.length ? 3 : 19
-            });  //use template name.
-            (3);
-            pssor.push(function (r) {
-                r.rules = r.rules.reverse();
-                r.rule = null;
-                for (var i = r.rules.length - 1; i >= 0; i--) {
-                    if (r.rules[i] && r.rules[i].length) {
-                        r.rule = r.rules.pop();
-                        break;
-                    } else {
-                        r.rules.pop();
+                        obj.count = tpl[2] || table.print_count;
+                        table.cmd.push(obj);
                     }
                 }
-                r.s = r.rule ? 4 : 18;
-            });                             //get template group name.
-            (4);
-            pssor.push(function (r) {
-                r.s = ( "undefined" != typeof r.tplGroup[r.rule] ) ? 5 : 17
-            });                             //inject data is template group?
-            (5);
-            pssor.push(function (r) {
-                r.s = aRule.length ? 6 : 16
-            });
+            }
+        }
+    };
 
-            //20
-            pssor.push(function (r) {
-                r.s = aRule.length ? 3 : 19
-            });
+    TTemplate.prototype.output = function (jsonParams) {
+        var self = this;
+        var jparams = jsonParams || {};
+        var source = jparams.src;
+        var out = source.replace(this.rex, function ($0, $1, $2, $3, $4, $5, $6, $7, $8, $9) {
 
-            /*
-             while (stat.s) {
-             pssor[stat.s](stat);
-             }*/
+            // $0   context
+            // $2   loop count
+            // $4   cmd
+            // $5   print count
+            // $7   strategy
+            // $9   packet
 
+            // var default_print_count = parseInt( $5||"1" );
+            var table = {
+                content: $0, loop: parseInt($2 || "1"), cmd: [], print_count: parseInt($5 || "1"), strategy: parseInt($7 || "0xFF"), remark: $9 || "", packet: jparams.ins || null, isSerial: true
 
-            console.log(" parame length:" + $4.split("|").length + "\n 1:[" + $1 + "]\n 2:[" + $2 + "]\n 3:[" + $3 + "]\n 4:[" + $4 + "]\n 5:[" + $5 + "]\n 6:[" + $6 + "]\n 7:[" + $7 + "]\n 8:[" + $8 + "]\n 9:[" + $9 + "]\n 0:" + $0);
+            };
 
-            var idx = parseInt($2);
-            return idx < inject.length ? inject[idx] : inject[parseInt(0)];
+            if (!(table.strategy & 1)) {
+                return table.content;
+            }
+
+            table.cmd_array = ($4 || "").split("},{");
+            self.createCmd(table);
+            table.isSerial = table.strategy & 2 && table.loop > 0;
+            table.loop = Math.abs(table.loop);
+
+            var strOut = "";
+            if (!table.cmd.length) {
+                if (table.strategy & 4) {
+                    return "< Lack of rules >" + table.content;
+                }
+            }
+
+            if (table.isSerial) {
+                for (; table.loop > 0; table.loop--)
+                    for (var j = 0; j < table.cmd.length; j++)
+                        for (var i = 0; i < table.cmd[j].count; i++)
+                            strOut += table.cmd[j].lambda || false ? table.cmd[j].lambda(table) : table.cmd[j].content;
+            } else {
+                var loop_count = table.loop;
+                for (var j = 0; j < table.cmd.length; j++) {
+                    table.loop = loop_count;
+                    for (; table.loop > 0; table.loop--)
+                        for (var i = 0; i < table.cmd[j].count; i++)
+                            strOut += table.cmd[j].lambda || false ? table.cmd[j].lambda(table) : table.cmd[j].content;
+                }
+            }
+            //console.log(" parame length:" + $4.split("|").length + "\n 1:[" + $1 + "]\n 2:[" + $2 + "]\n 3:[" + $3 + "]\n 4:[" + $4 + "]\n 5:[" + $5 + "]\n 6:[" + $6 + "]\n 7:[" + $7 + "]\n 8:[" + $8 + "]\n 9:[" + $9 + "]\n 0:" + $0);
+            return strOut;
         });
-        console.log(out);
+        //console.log(out);
     }
 
 
+    /** @typedef {TTemplate} org.red.ttemplate */
+    org.red.use(TTemplate);
 //end if
 }

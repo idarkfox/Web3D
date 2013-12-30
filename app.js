@@ -53,6 +53,7 @@ app.get('/users', user.list);
 app.get('/', routes.index);
 app.get('/edit', routes.edit);
 app.get('/test', routes.test);
+app.get('/test2', routes.test2);
 app.get('/examples', routes.examples);
 
 

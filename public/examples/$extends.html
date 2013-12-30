@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>$extends_ext test</title>
+    <title>$extends fix test</title>
     <script language="javascript" src="/javascripts/examples-head.js"></script>
 </head>
 <body>
 <br/>
 <br/>
 
-<div><a href="index.html">返回</a></div>
+<div><a href="../../views/index.html">返回</a></div>
 <hr/>
 <h1>id :
     <sapn name="id"></sapn>
@@ -91,12 +91,11 @@
             }
         };
 
-        var FooBar = $extends_ext([Foo, Bar], function (ext) {
-            return function (jsonParams) {
-                ext(jsonParams || {}, this);
-                //卡住这里以便观察 Foo 和 Bar 的不同处
-                alert("Constructor init");
-            }
+        var FooBar = $extends([Foo, Bar], function (jsonParams) {
+            ext(jsonParams || {}, this);
+            //卡住这里以便观察 Foo 和 Bar 的不同处
+            alert("Constructor init");
+
         });
 
         var foobar = new FooBar({
@@ -107,7 +106,7 @@
 
 
         document.getElementById("code_echo").innerHTML = document.getElementById("code_test").innerHTML.replace("<", "&lt;");
-        ;
+
     </script>
 </div>
 <script language="javascript">
